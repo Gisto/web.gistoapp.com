@@ -1,18 +1,1658 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[34],{"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/_deps/vscode-languageserver-types/main.js":
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[34],{
+
+/***/ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/_deps/vscode-languageserver-types/main.js":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/_deps/vscode-languageserver-types/main.js ***!
   \***********************************************************************************************************************************/
-/*! exports provided: Position, Range, Location, DiagnosticSeverity, Diagnostic, Command, TextEdit, TextDocumentEdit, WorkspaceChange, TextDocumentIdentifier, VersionedTextDocumentIdentifier, TextDocumentItem, MarkupKind, CompletionItemKind, InsertTextFormat, CompletionItem, CompletionList, MarkedString, ParameterInformation, SignatureInformation, DocumentHighlightKind, DocumentHighlight, SymbolKind, SymbolInformation, CodeActionContext, CodeLens, FormattingOptions, DocumentLink, EOL, TextDocument, TextDocumentSaveReason */function(e,n,t){"use strict";var r,i,o,u,a,c,s,d;t.r(n),t.d(n,"Position",function(){return r}),t.d(n,"Range",function(){return i}),t.d(n,"Location",function(){return o}),t.d(n,"DiagnosticSeverity",function(){return u}),t.d(n,"Diagnostic",function(){return a}),t.d(n,"Command",function(){return c}),t.d(n,"TextEdit",function(){return s}),t.d(n,"TextDocumentEdit",function(){return d}),t.d(n,"WorkspaceChange",function(){return T}),t.d(n,"TextDocumentIdentifier",function(){return f}),t.d(n,"VersionedTextDocumentIdentifier",function(){return l}),t.d(n,"TextDocumentItem",function(){return g}),t.d(n,"MarkupKind",function(){return m}),t.d(n,"CompletionItemKind",function(){return h}),t.d(n,"InsertTextFormat",function(){return p}),t.d(n,"CompletionItem",function(){return v}),t.d(n,"CompletionList",function(){return _}),t.d(n,"MarkedString",function(){return y}),t.d(n,"ParameterInformation",function(){return b}),t.d(n,"SignatureInformation",function(){return C}),t.d(n,"DocumentHighlightKind",function(){return w}),t.d(n,"DocumentHighlight",function(){return k}),t.d(n,"SymbolKind",function(){return x}),t.d(n,"SymbolInformation",function(){return S}),t.d(n,"CodeActionContext",function(){return I}),t.d(n,"CodeLens",function(){return D}),t.d(n,"FormattingOptions",function(){return E}),t.d(n,"DocumentLink",function(){return M}),t.d(n,"EOL",function(){return O}),t.d(n,"TextDocument",function(){return A}),t.d(n,"TextDocumentSaveReason",function(){return P}),function(e){e.create=function(e,n){return{line:e,character:n}},e.is=function(e){var n=e;return F.defined(n)&&F.number(n.line)&&F.number(n.character)}}(r||(r={})),function(e){e.create=function(e,n,t,i){if(F.number(e)&&F.number(n)&&F.number(t)&&F.number(i))return{start:r.create(e,n),end:r.create(t,i)};if(r.is(e)&&r.is(n))return{start:e,end:n};throw new Error("Range#create called with invalid arguments["+e+", "+n+", "+t+", "+i+"]")},e.is=function(e){var n=e;return F.defined(n)&&r.is(n.start)&&r.is(n.end)}}(i||(i={})),function(e){e.create=function(e,n){return{uri:e,range:n}},e.is=function(e){var n=e;return F.defined(n)&&i.is(n.range)&&(F.string(n.uri)||F.undefined(n.uri))}}(o||(o={})),function(e){e.Error=1,e.Warning=2,e.Information=3,e.Hint=4}(u||(u={})),function(e){e.create=function(e,n,t,r,i){var o={range:e,message:n};return F.defined(t)&&(o.severity=t),F.defined(r)&&(o.code=r),F.defined(i)&&(o.source=i),o},e.is=function(e){var n=e;return F.defined(n)&&i.is(n.range)&&F.string(n.message)&&(F.number(n.severity)||F.undefined(n.severity))&&(F.number(n.code)||F.string(n.code)||F.undefined(n.code))&&(F.string(n.source)||F.undefined(n.source))}}(a||(a={})),function(e){e.create=function(e,n){for(var t=[],r=2;r<arguments.length;r++)t[r-2]=arguments[r];var i={title:e,command:n};return F.defined(t)&&t.length>0&&(i.arguments=t),i},e.is=function(e){var n=e;return F.defined(n)&&F.string(n.title)&&F.string(n.title)}}(c||(c={})),function(e){e.replace=function(e,n){return{range:e,newText:n}},e.insert=function(e,n){return{range:{start:e,end:e},newText:n}},e.del=function(e){return{range:e,newText:""}}}(s||(s={})),function(e){e.create=function(e,n){return{textDocument:e,edits:n}},e.is=function(e){var n=e;return F.defined(n)&&l.is(n.textDocument)&&Array.isArray(n.edits)}}(d||(d={}));var f,l,g,m,h,p,v,_,y,b,C,w,k,x,S,I,D,E,K=function(){function e(e){this.edits=e}return e.prototype.insert=function(e,n){this.edits.push(s.insert(e,n))},e.prototype.replace=function(e,n){this.edits.push(s.replace(e,n))},e.prototype.delete=function(e){this.edits.push(s.del(e))},e.prototype.add=function(e){this.edits.push(e)},e.prototype.all=function(){return this.edits},e.prototype.clear=function(){this.edits.splice(0,this.edits.length)},e}(),T=function(){function e(e){var n=this;this._textEditChanges=Object.create(null),e&&(this._workspaceEdit=e,e.documentChanges?e.documentChanges.forEach(function(e){var t=new K(e.edits);n._textEditChanges[e.textDocument.uri]=t}):e.changes&&Object.keys(e.changes).forEach(function(t){var r=new K(e.changes[t]);n._textEditChanges[t]=r}))}return Object.defineProperty(e.prototype,"edit",{get:function(){return this._workspaceEdit},enumerable:!0,configurable:!0}),e.prototype.getTextEditChange=function(e){if(l.is(e)){if(this._workspaceEdit||(this._workspaceEdit={documentChanges:[]}),!this._workspaceEdit.documentChanges)throw new Error("Workspace edit is not configured for versioned document changes.");var n=e;if(!(r=this._textEditChanges[n.uri])){var t={textDocument:n,edits:i=[]};this._workspaceEdit.documentChanges.push(t),r=new K(i),this._textEditChanges[n.uri]=r}return r}if(this._workspaceEdit||(this._workspaceEdit={changes:Object.create(null)}),!this._workspaceEdit.changes)throw new Error("Workspace edit is not configured for normal text edit changes.");var r;if(!(r=this._textEditChanges[e])){var i=[];this._workspaceEdit.changes[e]=i,r=new K(i),this._textEditChanges[e]=r}return r},e}();!function(e){e.create=function(e){return{uri:e}},e.is=function(e){var n=e;return F.defined(n)&&F.string(n.uri)}}(f||(f={})),function(e){e.create=function(e,n){return{uri:e,version:n}},e.is=function(e){var n=e;return F.defined(n)&&F.string(n.uri)&&F.number(n.version)}}(l||(l={})),function(e){e.create=function(e,n,t,r){return{uri:e,languageId:n,version:t,text:r}},e.is=function(e){var n=e;return F.defined(n)&&F.string(n.uri)&&F.string(n.languageId)&&F.number(n.version)&&F.string(n.text)}}(g||(g={})),function(e){e.PlainText="plaintext",e.Markdown="markdown"}(m||(m={})),function(e){e.Text=1,e.Method=2,e.Function=3,e.Constructor=4,e.Field=5,e.Variable=6,e.Class=7,e.Interface=8,e.Module=9,e.Property=10,e.Unit=11,e.Value=12,e.Enum=13,e.Keyword=14,e.Snippet=15,e.Color=16,e.File=17,e.Reference=18,e.Folder=19,e.EnumMember=20,e.Constant=21,e.Struct=22,e.Event=23,e.Operator=24,e.TypeParameter=25}(h||(h={})),function(e){e.PlainText=1,e.Snippet=2}(p||(p={})),function(e){e.create=function(e){return{label:e}}}(v||(v={})),function(e){e.create=function(e,n){return{items:e||[],isIncomplete:!!n}}}(_||(_={})),function(e){e.fromPlainText=function(e){return e.replace(/[\\`*_{}[\]()#+\-.!]/g,"\\$&")}}(y||(y={})),function(e){e.create=function(e,n){return n?{label:e,documentation:n}:{label:e}}}(b||(b={})),function(e){e.create=function(e,n){for(var t=[],r=2;r<arguments.length;r++)t[r-2]=arguments[r];var i={label:e};return F.defined(n)&&(i.documentation=n),F.defined(t)?i.parameters=t:i.parameters=[],i}}(C||(C={})),function(e){e.Text=1,e.Read=2,e.Write=3}(w||(w={})),function(e){e.create=function(e,n){var t={range:e};return F.number(n)&&(t.kind=n),t}}(k||(k={})),function(e){e.File=1,e.Module=2,e.Namespace=3,e.Package=4,e.Class=5,e.Method=6,e.Property=7,e.Field=8,e.Constructor=9,e.Enum=10,e.Interface=11,e.Function=12,e.Variable=13,e.Constant=14,e.String=15,e.Number=16,e.Boolean=17,e.Array=18,e.Object=19,e.Key=20,e.Null=21,e.EnumMember=22,e.Struct=23,e.Event=24,e.Operator=25,e.TypeParameter=26}(x||(x={})),function(e){e.create=function(e,n,t,r,i){var o={name:e,kind:n,location:{uri:r,range:t}};return i&&(o.containerName=i),o}}(S||(S={})),function(e){e.create=function(e){return{diagnostics:e}},e.is=function(e){var n=e;return F.defined(n)&&F.typedArray(n.diagnostics,a.is)}}(I||(I={})),function(e){e.create=function(e,n){var t={range:e};return F.defined(n)&&(t.data=n),t},e.is=function(e){var n=e;return F.defined(n)&&i.is(n.range)&&(F.undefined(n.command)||c.is(n.command))}}(D||(D={})),function(e){e.create=function(e,n){return{tabSize:e,insertSpaces:n}},e.is=function(e){var n=e;return F.defined(n)&&F.number(n.tabSize)&&F.boolean(n.insertSpaces)}}(E||(E={}));var M=function(){return function(){}}();!function(e){e.create=function(e,n){return{range:e,target:n}},e.is=function(e){var n=e;return F.defined(n)&&i.is(n.range)&&(F.undefined(n.target)||F.string(n.target))}}(M||(M={}));var A,P,O=["\n","\r\n","\r"];!function(e){e.create=function(e,n,t,r){return new j(e,n,t,r)},e.is=function(e){var n=e;return!!(F.defined(n)&&F.string(n.uri)&&(F.undefined(n.languageId)||F.string(n.languageId))&&F.number(n.lineCount)&&F.func(n.getText)&&F.func(n.positionAt)&&F.func(n.offsetAt))},e.applyEdits=function(e,n){for(var t=e.getText(),r=function e(n,t){if(n.length<=1)return n;var r=n.length/2|0,i=n.slice(0,r),o=n.slice(r);e(i,t),e(o,t);for(var u=0,a=0,c=0;u<i.length&&a<o.length;){var s=t(i[u],o[a]);n[c++]=s<=0?i[u++]:o[a++]}for(;u<i.length;)n[c++]=i[u++];for(;a<o.length;)n[c++]=o[a++];return n}(n,function(e,n){return 0==e.range.start.line-n.range.start.line?e.range.start.character-n.range.start.character:0}),i=t.length,o=r.length-1;o>=0;o--){var u=r[o],a=e.offsetAt(u.range.start),c=e.offsetAt(u.range.end);if(!(c<=i))throw new Error("Ovelapping edit");t=t.substring(0,a)+u.newText+t.substring(c,t.length),i=a}return t}}(A||(A={})),function(e){e.Manual=1,e.AfterDelay=2,e.FocusOut=3}(P||(P={}));var F,j=function(){function e(e,n,t,r){this._uri=e,this._languageId=n,this._version=t,this._content=r,this._lineOffsets=null}return Object.defineProperty(e.prototype,"uri",{get:function(){return this._uri},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"languageId",{get:function(){return this._languageId},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"version",{get:function(){return this._version},enumerable:!0,configurable:!0}),e.prototype.getText=function(e){if(e){var n=this.offsetAt(e.start),t=this.offsetAt(e.end);return this._content.substring(n,t)}return this._content},e.prototype.update=function(e,n){this._content=e.text,this._version=n,this._lineOffsets=null},e.prototype.getLineOffsets=function(){if(null===this._lineOffsets){for(var e=[],n=this._content,t=!0,r=0;r<n.length;r++){t&&(e.push(r),t=!1);var i=n.charAt(r);t="\r"===i||"\n"===i,"\r"===i&&r+1<n.length&&"\n"===n.charAt(r+1)&&r++}t&&n.length>0&&e.push(n.length),this._lineOffsets=e}return this._lineOffsets},e.prototype.positionAt=function(e){e=Math.max(Math.min(e,this._content.length),0);var n=this.getLineOffsets(),t=0,i=n.length;if(0===i)return r.create(0,e);for(;t<i;){var o=Math.floor((t+i)/2);n[o]>e?i=o:t=o+1}var u=t-1;return r.create(u,e-n[u])},e.prototype.offsetAt=function(e){var n=this.getLineOffsets();if(e.line>=n.length)return this._content.length;if(e.line<0)return 0;var t=n[e.line],r=e.line+1<n.length?n[e.line+1]:this._content.length;return Math.max(Math.min(t+e.character,r),t)},Object.defineProperty(e.prototype,"lineCount",{get:function(){return this.getLineOffsets().length},enumerable:!0,configurable:!0}),e}();!function(e){var n=Object.prototype.toString;e.defined=function(e){return void 0!==e},e.undefined=function(e){return void 0===e},e.boolean=function(e){return!0===e||!1===e},e.string=function(e){return"[object String]"===n.call(e)},e.number=function(e){return"[object Number]"===n.call(e)},e.func=function(e){return"[object Function]"===n.call(e)},e.typedArray=function(e,n){return Array.isArray(e)&&e.every(n)}}(F||(F={}))},"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/cssMode.js":
+/*! exports provided: Position, Range, Location, DiagnosticSeverity, Diagnostic, Command, TextEdit, TextDocumentEdit, WorkspaceChange, TextDocumentIdentifier, VersionedTextDocumentIdentifier, TextDocumentItem, MarkupKind, CompletionItemKind, InsertTextFormat, CompletionItem, CompletionList, MarkedString, ParameterInformation, SignatureInformation, DocumentHighlightKind, DocumentHighlight, SymbolKind, SymbolInformation, CodeActionContext, CodeLens, FormattingOptions, DocumentLink, EOL, TextDocument, TextDocumentSaveReason */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Position", function() { return Position; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Range", function() { return Range; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Location", function() { return Location; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DiagnosticSeverity", function() { return DiagnosticSeverity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Diagnostic", function() { return Diagnostic; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Command", function() { return Command; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextEdit", function() { return TextEdit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextDocumentEdit", function() { return TextDocumentEdit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkspaceChange", function() { return WorkspaceChange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextDocumentIdentifier", function() { return TextDocumentIdentifier; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VersionedTextDocumentIdentifier", function() { return VersionedTextDocumentIdentifier; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextDocumentItem", function() { return TextDocumentItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkupKind", function() { return MarkupKind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompletionItemKind", function() { return CompletionItemKind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsertTextFormat", function() { return InsertTextFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompletionItem", function() { return CompletionItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompletionList", function() { return CompletionList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkedString", function() { return MarkedString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParameterInformation", function() { return ParameterInformation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignatureInformation", function() { return SignatureInformation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentHighlightKind", function() { return DocumentHighlightKind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentHighlight", function() { return DocumentHighlight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SymbolKind", function() { return SymbolKind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SymbolInformation", function() { return SymbolInformation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeActionContext", function() { return CodeActionContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeLens", function() { return CodeLens; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormattingOptions", function() { return FormattingOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentLink", function() { return DocumentLink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EOL", function() { return EOL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextDocument", function() { return TextDocument; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextDocumentSaveReason", function() { return TextDocumentSaveReason; });
+/* --------------------------------------------------------------------------------------------
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ * ------------------------------------------------------------------------------------------ */
+
+/**
+ * The Position namespace provides helper functions to work with
+ * [Position](#Position) literals.
+ */
+var Position;
+(function (Position) {
+    /**
+     * Creates a new Position literal from the given line and character.
+     * @param line The position's line.
+     * @param character The position's character.
+     */
+    function create(line, character) {
+        return { line: line, character: character };
+    }
+    Position.create = create;
+    /**
+     * Checks whether the given liternal conforms to the [Position](#Position) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.number(candidate.line) && Is.number(candidate.character);
+    }
+    Position.is = is;
+})(Position || (Position = {}));
+/**
+ * The Range namespace provides helper functions to work with
+ * [Range](#Range) literals.
+ */
+var Range;
+(function (Range) {
+    function create(one, two, three, four) {
+        if (Is.number(one) && Is.number(two) && Is.number(three) && Is.number(four)) {
+            return { start: Position.create(one, two), end: Position.create(three, four) };
+        }
+        else if (Position.is(one) && Position.is(two)) {
+            return { start: one, end: two };
+        }
+        else {
+            throw new Error("Range#create called with invalid arguments[" + one + ", " + two + ", " + three + ", " + four + "]");
+        }
+    }
+    Range.create = create;
+    /**
+     * Checks whether the given literal conforms to the [Range](#Range) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Position.is(candidate.start) && Position.is(candidate.end);
+    }
+    Range.is = is;
+})(Range || (Range = {}));
+/**
+ * The Location namespace provides helper functions to work with
+ * [Location](#Location) literals.
+ */
+var Location;
+(function (Location) {
+    /**
+     * Creates a Location literal.
+     * @param uri The location's uri.
+     * @param range The location's range.
+     */
+    function create(uri, range) {
+        return { uri: uri, range: range };
+    }
+    Location.create = create;
+    /**
+     * Checks whether the given literal conforms to the [Location](#Location) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Range.is(candidate.range) && (Is.string(candidate.uri) || Is.undefined(candidate.uri));
+    }
+    Location.is = is;
+})(Location || (Location = {}));
+/**
+ * The diagnostic's serverity.
+ */
+var DiagnosticSeverity;
+(function (DiagnosticSeverity) {
+    /**
+     * Reports an error.
+     */
+    DiagnosticSeverity.Error = 1;
+    /**
+     * Reports a warning.
+     */
+    DiagnosticSeverity.Warning = 2;
+    /**
+     * Reports an information.
+     */
+    DiagnosticSeverity.Information = 3;
+    /**
+     * Reports a hint.
+     */
+    DiagnosticSeverity.Hint = 4;
+})(DiagnosticSeverity || (DiagnosticSeverity = {}));
+/**
+ * The Diagnostic namespace provides helper functions to work with
+ * [Diagnostic](#Diagnostic) literals.
+ */
+var Diagnostic;
+(function (Diagnostic) {
+    /**
+     * Creates a new Diagnostic literal.
+     */
+    function create(range, message, severity, code, source) {
+        var result = { range: range, message: message };
+        if (Is.defined(severity)) {
+            result.severity = severity;
+        }
+        if (Is.defined(code)) {
+            result.code = code;
+        }
+        if (Is.defined(source)) {
+            result.source = source;
+        }
+        return result;
+    }
+    Diagnostic.create = create;
+    /**
+     * Checks whether the given literal conforms to the [Diagnostic](#Diagnostic) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate)
+            && Range.is(candidate.range)
+            && Is.string(candidate.message)
+            && (Is.number(candidate.severity) || Is.undefined(candidate.severity))
+            && (Is.number(candidate.code) || Is.string(candidate.code) || Is.undefined(candidate.code))
+            && (Is.string(candidate.source) || Is.undefined(candidate.source));
+    }
+    Diagnostic.is = is;
+})(Diagnostic || (Diagnostic = {}));
+/**
+ * The Command namespace provides helper functions to work with
+ * [Command](#Command) literals.
+ */
+var Command;
+(function (Command) {
+    /**
+     * Creates a new Command literal.
+     */
+    function create(title, command) {
+        var args = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+        }
+        var result = { title: title, command: command };
+        if (Is.defined(args) && args.length > 0) {
+            result.arguments = args;
+        }
+        return result;
+    }
+    Command.create = create;
+    /**
+     * Checks whether the given literal conforms to the [Command](#Command) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.string(candidate.title) && Is.string(candidate.title);
+    }
+    Command.is = is;
+})(Command || (Command = {}));
+/**
+ * The TextEdit namespace provides helper function to create replace,
+ * insert and delete edits more easily.
+ */
+var TextEdit;
+(function (TextEdit) {
+    /**
+     * Creates a replace text edit.
+     * @param range The range of text to be replaced.
+     * @param newText The new text.
+     */
+    function replace(range, newText) {
+        return { range: range, newText: newText };
+    }
+    TextEdit.replace = replace;
+    /**
+     * Creates a insert text edit.
+     * @param position The position to insert the text at.
+     * @param newText The text to be inserted.
+     */
+    function insert(position, newText) {
+        return { range: { start: position, end: position }, newText: newText };
+    }
+    TextEdit.insert = insert;
+    /**
+     * Creates a delete text edit.
+     * @param range The range of text to be deleted.
+     */
+    function del(range) {
+        return { range: range, newText: '' };
+    }
+    TextEdit.del = del;
+})(TextEdit || (TextEdit = {}));
+/**
+ * The TextDocumentEdit namespace provides helper function to create
+ * an edit that manipulates a text document.
+ */
+var TextDocumentEdit;
+(function (TextDocumentEdit) {
+    /**
+     * Creates a new `TextDocumentEdit`
+     */
+    function create(textDocument, edits) {
+        return { textDocument: textDocument, edits: edits };
+    }
+    TextDocumentEdit.create = create;
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate)
+            && VersionedTextDocumentIdentifier.is(candidate.textDocument)
+            && Array.isArray(candidate.edits);
+    }
+    TextDocumentEdit.is = is;
+})(TextDocumentEdit || (TextDocumentEdit = {}));
+var TextEditChangeImpl = /** @class */ (function () {
+    function TextEditChangeImpl(edits) {
+        this.edits = edits;
+    }
+    TextEditChangeImpl.prototype.insert = function (position, newText) {
+        this.edits.push(TextEdit.insert(position, newText));
+    };
+    TextEditChangeImpl.prototype.replace = function (range, newText) {
+        this.edits.push(TextEdit.replace(range, newText));
+    };
+    TextEditChangeImpl.prototype.delete = function (range) {
+        this.edits.push(TextEdit.del(range));
+    };
+    TextEditChangeImpl.prototype.add = function (edit) {
+        this.edits.push(edit);
+    };
+    TextEditChangeImpl.prototype.all = function () {
+        return this.edits;
+    };
+    TextEditChangeImpl.prototype.clear = function () {
+        this.edits.splice(0, this.edits.length);
+    };
+    return TextEditChangeImpl;
+}());
+/**
+ * A workspace change helps constructing changes to a workspace.
+ */
+var WorkspaceChange = /** @class */ (function () {
+    function WorkspaceChange(workspaceEdit) {
+        var _this = this;
+        this._textEditChanges = Object.create(null);
+        if (workspaceEdit) {
+            this._workspaceEdit = workspaceEdit;
+            if (workspaceEdit.documentChanges) {
+                workspaceEdit.documentChanges.forEach(function (textDocumentEdit) {
+                    var textEditChange = new TextEditChangeImpl(textDocumentEdit.edits);
+                    _this._textEditChanges[textDocumentEdit.textDocument.uri] = textEditChange;
+                });
+            }
+            else if (workspaceEdit.changes) {
+                Object.keys(workspaceEdit.changes).forEach(function (key) {
+                    var textEditChange = new TextEditChangeImpl(workspaceEdit.changes[key]);
+                    _this._textEditChanges[key] = textEditChange;
+                });
+            }
+        }
+    }
+    Object.defineProperty(WorkspaceChange.prototype, "edit", {
+        /**
+         * Returns the underlying [WorkspaceEdit](#WorkspaceEdit) literal
+         * use to be returned from a workspace edit operation like rename.
+         */
+        get: function () {
+            return this._workspaceEdit;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WorkspaceChange.prototype.getTextEditChange = function (key) {
+        if (VersionedTextDocumentIdentifier.is(key)) {
+            if (!this._workspaceEdit) {
+                this._workspaceEdit = {
+                    documentChanges: []
+                };
+            }
+            if (!this._workspaceEdit.documentChanges) {
+                throw new Error('Workspace edit is not configured for versioned document changes.');
+            }
+            var textDocument = key;
+            var result = this._textEditChanges[textDocument.uri];
+            if (!result) {
+                var edits = [];
+                var textDocumentEdit = {
+                    textDocument: textDocument,
+                    edits: edits
+                };
+                this._workspaceEdit.documentChanges.push(textDocumentEdit);
+                result = new TextEditChangeImpl(edits);
+                this._textEditChanges[textDocument.uri] = result;
+            }
+            return result;
+        }
+        else {
+            if (!this._workspaceEdit) {
+                this._workspaceEdit = {
+                    changes: Object.create(null)
+                };
+            }
+            if (!this._workspaceEdit.changes) {
+                throw new Error('Workspace edit is not configured for normal text edit changes.');
+            }
+            var result = this._textEditChanges[key];
+            if (!result) {
+                var edits = [];
+                this._workspaceEdit.changes[key] = edits;
+                result = new TextEditChangeImpl(edits);
+                this._textEditChanges[key] = result;
+            }
+            return result;
+        }
+    };
+    return WorkspaceChange;
+}());
+
+/**
+ * The TextDocumentIdentifier namespace provides helper functions to work with
+ * [TextDocumentIdentifier](#TextDocumentIdentifier) literals.
+ */
+var TextDocumentIdentifier;
+(function (TextDocumentIdentifier) {
+    /**
+     * Creates a new TextDocumentIdentifier literal.
+     * @param uri The document's uri.
+     */
+    function create(uri) {
+        return { uri: uri };
+    }
+    TextDocumentIdentifier.create = create;
+    /**
+     * Checks whether the given literal conforms to the [TextDocumentIdentifier](#TextDocumentIdentifier) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.string(candidate.uri);
+    }
+    TextDocumentIdentifier.is = is;
+})(TextDocumentIdentifier || (TextDocumentIdentifier = {}));
+/**
+ * The VersionedTextDocumentIdentifier namespace provides helper functions to work with
+ * [VersionedTextDocumentIdentifier](#VersionedTextDocumentIdentifier) literals.
+ */
+var VersionedTextDocumentIdentifier;
+(function (VersionedTextDocumentIdentifier) {
+    /**
+     * Creates a new VersionedTextDocumentIdentifier literal.
+     * @param uri The document's uri.
+     * @param uri The document's text.
+     */
+    function create(uri, version) {
+        return { uri: uri, version: version };
+    }
+    VersionedTextDocumentIdentifier.create = create;
+    /**
+     * Checks whether the given literal conforms to the [VersionedTextDocumentIdentifier](#VersionedTextDocumentIdentifier) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.string(candidate.uri) && Is.number(candidate.version);
+    }
+    VersionedTextDocumentIdentifier.is = is;
+})(VersionedTextDocumentIdentifier || (VersionedTextDocumentIdentifier = {}));
+/**
+ * The TextDocumentItem namespace provides helper functions to work with
+ * [TextDocumentItem](#TextDocumentItem) literals.
+ */
+var TextDocumentItem;
+(function (TextDocumentItem) {
+    /**
+     * Creates a new TextDocumentItem literal.
+     * @param uri The document's uri.
+     * @param languageId The document's language identifier.
+     * @param version The document's version number.
+     * @param text The document's text.
+     */
+    function create(uri, languageId, version, text) {
+        return { uri: uri, languageId: languageId, version: version, text: text };
+    }
+    TextDocumentItem.create = create;
+    /**
+     * Checks whether the given literal conforms to the [TextDocumentItem](#TextDocumentItem) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.string(candidate.uri) && Is.string(candidate.languageId) && Is.number(candidate.version) && Is.string(candidate.text);
+    }
+    TextDocumentItem.is = is;
+})(TextDocumentItem || (TextDocumentItem = {}));
+/**
+ * Describes the content type that a client supports in various
+ * result literals like `Hover`, `ParameterInfo` or `CompletionItem`.
+ *
+ * Please note that `MarkupKinds` must not start with a `$`. This kinds
+ * are reserved for internal usage.
+ */
+var MarkupKind;
+(function (MarkupKind) {
+    /**
+     * Plain text is supported as a content format
+     */
+    MarkupKind.PlainText = 'plaintext';
+    /**
+     * Markdown is supported as a content format
+     */
+    MarkupKind.Markdown = 'markdown';
+})(MarkupKind || (MarkupKind = {}));
+/**
+ * The kind of a completion entry.
+ */
+var CompletionItemKind;
+(function (CompletionItemKind) {
+    CompletionItemKind.Text = 1;
+    CompletionItemKind.Method = 2;
+    CompletionItemKind.Function = 3;
+    CompletionItemKind.Constructor = 4;
+    CompletionItemKind.Field = 5;
+    CompletionItemKind.Variable = 6;
+    CompletionItemKind.Class = 7;
+    CompletionItemKind.Interface = 8;
+    CompletionItemKind.Module = 9;
+    CompletionItemKind.Property = 10;
+    CompletionItemKind.Unit = 11;
+    CompletionItemKind.Value = 12;
+    CompletionItemKind.Enum = 13;
+    CompletionItemKind.Keyword = 14;
+    CompletionItemKind.Snippet = 15;
+    CompletionItemKind.Color = 16;
+    CompletionItemKind.File = 17;
+    CompletionItemKind.Reference = 18;
+    CompletionItemKind.Folder = 19;
+    CompletionItemKind.EnumMember = 20;
+    CompletionItemKind.Constant = 21;
+    CompletionItemKind.Struct = 22;
+    CompletionItemKind.Event = 23;
+    CompletionItemKind.Operator = 24;
+    CompletionItemKind.TypeParameter = 25;
+})(CompletionItemKind || (CompletionItemKind = {}));
+/**
+ * Defines whether the insert text in a completion item should be interpreted as
+ * plain text or a snippet.
+ */
+var InsertTextFormat;
+(function (InsertTextFormat) {
+    /**
+     * The primary text to be inserted is treated as a plain string.
+     */
+    InsertTextFormat.PlainText = 1;
+    /**
+     * The primary text to be inserted is treated as a snippet.
+     *
+     * A snippet can define tab stops and placeholders with `$1`, `$2`
+     * and `${3:foo}`. `$0` defines the final tab stop, it defaults to
+     * the end of the snippet. Placeholders with equal identifiers are linked,
+     * that is typing in one will update others too.
+     *
+     * See also: https://github.com/Microsoft/vscode/blob/master/src/vs/editor/contrib/snippet/common/snippet.md
+     */
+    InsertTextFormat.Snippet = 2;
+})(InsertTextFormat || (InsertTextFormat = {}));
+/**
+ * The CompletionItem namespace provides functions to deal with
+ * completion items.
+ */
+var CompletionItem;
+(function (CompletionItem) {
+    /**
+     * Create a completion item and seed it with a label.
+     * @param label The completion item's label
+     */
+    function create(label) {
+        return { label: label };
+    }
+    CompletionItem.create = create;
+})(CompletionItem || (CompletionItem = {}));
+/**
+ * The CompletionList namespace provides functions to deal with
+ * completion lists.
+ */
+var CompletionList;
+(function (CompletionList) {
+    /**
+     * Creates a new completion list.
+     *
+     * @param items The completion items.
+     * @param isIncomplete The list is not complete.
+     */
+    function create(items, isIncomplete) {
+        return { items: items ? items : [], isIncomplete: !!isIncomplete };
+    }
+    CompletionList.create = create;
+})(CompletionList || (CompletionList = {}));
+var MarkedString;
+(function (MarkedString) {
+    /**
+     * Creates a marked string from plain text.
+     *
+     * @param plainText The plain text.
+     */
+    function fromPlainText(plainText) {
+        return plainText.replace(/[\\`*_{}[\]()#+\-.!]/g, "\\$&"); // escape markdown syntax tokens: http://daringfireball.net/projects/markdown/syntax#backslash
+    }
+    MarkedString.fromPlainText = fromPlainText;
+})(MarkedString || (MarkedString = {}));
+/**
+ * The ParameterInformation namespace provides helper functions to work with
+ * [ParameterInformation](#ParameterInformation) literals.
+ */
+var ParameterInformation;
+(function (ParameterInformation) {
+    /**
+     * Creates a new parameter information literal.
+     *
+     * @param label A label string.
+     * @param documentation A doc string.
+     */
+    function create(label, documentation) {
+        return documentation ? { label: label, documentation: documentation } : { label: label };
+    }
+    ParameterInformation.create = create;
+    ;
+})(ParameterInformation || (ParameterInformation = {}));
+/**
+ * The SignatureInformation namespace provides helper functions to work with
+ * [SignatureInformation](#SignatureInformation) literals.
+ */
+var SignatureInformation;
+(function (SignatureInformation) {
+    function create(label, documentation) {
+        var parameters = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            parameters[_i - 2] = arguments[_i];
+        }
+        var result = { label: label };
+        if (Is.defined(documentation)) {
+            result.documentation = documentation;
+        }
+        if (Is.defined(parameters)) {
+            result.parameters = parameters;
+        }
+        else {
+            result.parameters = [];
+        }
+        return result;
+    }
+    SignatureInformation.create = create;
+})(SignatureInformation || (SignatureInformation = {}));
+/**
+ * A document highlight kind.
+ */
+var DocumentHighlightKind;
+(function (DocumentHighlightKind) {
+    /**
+     * A textual occurrance.
+     */
+    DocumentHighlightKind.Text = 1;
+    /**
+     * Read-access of a symbol, like reading a variable.
+     */
+    DocumentHighlightKind.Read = 2;
+    /**
+     * Write-access of a symbol, like writing to a variable.
+     */
+    DocumentHighlightKind.Write = 3;
+})(DocumentHighlightKind || (DocumentHighlightKind = {}));
+/**
+ * DocumentHighlight namespace to provide helper functions to work with
+ * [DocumentHighlight](#DocumentHighlight) literals.
+ */
+var DocumentHighlight;
+(function (DocumentHighlight) {
+    /**
+     * Create a DocumentHighlight object.
+     * @param range The range the highlight applies to.
+     */
+    function create(range, kind) {
+        var result = { range: range };
+        if (Is.number(kind)) {
+            result.kind = kind;
+        }
+        return result;
+    }
+    DocumentHighlight.create = create;
+})(DocumentHighlight || (DocumentHighlight = {}));
+/**
+ * A symbol kind.
+ */
+var SymbolKind;
+(function (SymbolKind) {
+    SymbolKind.File = 1;
+    SymbolKind.Module = 2;
+    SymbolKind.Namespace = 3;
+    SymbolKind.Package = 4;
+    SymbolKind.Class = 5;
+    SymbolKind.Method = 6;
+    SymbolKind.Property = 7;
+    SymbolKind.Field = 8;
+    SymbolKind.Constructor = 9;
+    SymbolKind.Enum = 10;
+    SymbolKind.Interface = 11;
+    SymbolKind.Function = 12;
+    SymbolKind.Variable = 13;
+    SymbolKind.Constant = 14;
+    SymbolKind.String = 15;
+    SymbolKind.Number = 16;
+    SymbolKind.Boolean = 17;
+    SymbolKind.Array = 18;
+    SymbolKind.Object = 19;
+    SymbolKind.Key = 20;
+    SymbolKind.Null = 21;
+    SymbolKind.EnumMember = 22;
+    SymbolKind.Struct = 23;
+    SymbolKind.Event = 24;
+    SymbolKind.Operator = 25;
+    SymbolKind.TypeParameter = 26;
+})(SymbolKind || (SymbolKind = {}));
+var SymbolInformation;
+(function (SymbolInformation) {
+    /**
+     * Creates a new symbol information literal.
+     *
+     * @param name The name of the symbol.
+     * @param kind The kind of the symbol.
+     * @param range The range of the location of the symbol.
+     * @param uri The resource of the location of symbol, defaults to the current document.
+     * @param containerName The name of the symbol containg the symbol.
+     */
+    function create(name, kind, range, uri, containerName) {
+        var result = {
+            name: name,
+            kind: kind,
+            location: { uri: uri, range: range }
+        };
+        if (containerName) {
+            result.containerName = containerName;
+        }
+        return result;
+    }
+    SymbolInformation.create = create;
+})(SymbolInformation || (SymbolInformation = {}));
+/**
+ * The CodeActionContext namespace provides helper functions to work with
+ * [CodeActionContext](#CodeActionContext) literals.
+ */
+var CodeActionContext;
+(function (CodeActionContext) {
+    /**
+     * Creates a new CodeActionContext literal.
+     */
+    function create(diagnostics) {
+        return { diagnostics: diagnostics };
+    }
+    CodeActionContext.create = create;
+    /**
+     * Checks whether the given literal conforms to the [CodeActionContext](#CodeActionContext) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.typedArray(candidate.diagnostics, Diagnostic.is);
+    }
+    CodeActionContext.is = is;
+})(CodeActionContext || (CodeActionContext = {}));
+/**
+ * The CodeLens namespace provides helper functions to work with
+ * [CodeLens](#CodeLens) literals.
+ */
+var CodeLens;
+(function (CodeLens) {
+    /**
+     * Creates a new CodeLens literal.
+     */
+    function create(range, data) {
+        var result = { range: range };
+        if (Is.defined(data))
+            result.data = data;
+        return result;
+    }
+    CodeLens.create = create;
+    /**
+     * Checks whether the given literal conforms to the [CodeLens](#CodeLens) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Range.is(candidate.range) && (Is.undefined(candidate.command) || Command.is(candidate.command));
+    }
+    CodeLens.is = is;
+})(CodeLens || (CodeLens = {}));
+/**
+ * The FormattingOptions namespace provides helper functions to work with
+ * [FormattingOptions](#FormattingOptions) literals.
+ */
+var FormattingOptions;
+(function (FormattingOptions) {
+    /**
+     * Creates a new FormattingOptions literal.
+     */
+    function create(tabSize, insertSpaces) {
+        return { tabSize: tabSize, insertSpaces: insertSpaces };
+    }
+    FormattingOptions.create = create;
+    /**
+     * Checks whether the given literal conforms to the [FormattingOptions](#FormattingOptions) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.number(candidate.tabSize) && Is.boolean(candidate.insertSpaces);
+    }
+    FormattingOptions.is = is;
+})(FormattingOptions || (FormattingOptions = {}));
+/**
+ * A document link is a range in a text document that links to an internal or external resource, like another
+ * text document or a web site.
+ */
+var DocumentLink = /** @class */ (function () {
+    function DocumentLink() {
+    }
+    return DocumentLink;
+}());
+
+/**
+ * The DocumentLink namespace provides helper functions to work with
+ * [DocumentLink](#DocumentLink) literals.
+ */
+(function (DocumentLink) {
+    /**
+     * Creates a new DocumentLink literal.
+     */
+    function create(range, target) {
+        return { range: range, target: target };
+    }
+    DocumentLink.create = create;
+    /**
+     * Checks whether the given literal conforms to the [DocumentLink](#DocumentLink) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Range.is(candidate.range) && (Is.undefined(candidate.target) || Is.string(candidate.target));
+    }
+    DocumentLink.is = is;
+})(DocumentLink || (DocumentLink = {}));
+var EOL = ['\n', '\r\n', '\r'];
+var TextDocument;
+(function (TextDocument) {
+    /**
+     * Creates a new ITextDocument literal from the given uri and content.
+     * @param uri The document's uri.
+     * @param languageId  The document's language Id.
+     * @param content The document's content.
+     */
+    function create(uri, languageId, version, content) {
+        return new FullTextDocument(uri, languageId, version, content);
+    }
+    TextDocument.create = create;
+    /**
+     * Checks whether the given literal conforms to the [ITextDocument](#ITextDocument) interface.
+     */
+    function is(value) {
+        var candidate = value;
+        return Is.defined(candidate) && Is.string(candidate.uri) && (Is.undefined(candidate.languageId) || Is.string(candidate.languageId)) && Is.number(candidate.lineCount)
+            && Is.func(candidate.getText) && Is.func(candidate.positionAt) && Is.func(candidate.offsetAt) ? true : false;
+    }
+    TextDocument.is = is;
+    function applyEdits(document, edits) {
+        var text = document.getText();
+        var sortedEdits = mergeSort(edits, function (a, b) {
+            var diff = a.range.start.line - b.range.start.line;
+            if (diff === 0) {
+                return a.range.start.character - b.range.start.character;
+            }
+            return 0;
+        });
+        var lastModifiedOffset = text.length;
+        for (var i = sortedEdits.length - 1; i >= 0; i--) {
+            var e = sortedEdits[i];
+            var startOffset = document.offsetAt(e.range.start);
+            var endOffset = document.offsetAt(e.range.end);
+            if (endOffset <= lastModifiedOffset) {
+                text = text.substring(0, startOffset) + e.newText + text.substring(endOffset, text.length);
+            }
+            else {
+                throw new Error('Ovelapping edit');
+            }
+            lastModifiedOffset = startOffset;
+        }
+        return text;
+    }
+    TextDocument.applyEdits = applyEdits;
+    function mergeSort(data, compare) {
+        if (data.length <= 1) {
+            // sorted
+            return data;
+        }
+        var p = (data.length / 2) | 0;
+        var left = data.slice(0, p);
+        var right = data.slice(p);
+        mergeSort(left, compare);
+        mergeSort(right, compare);
+        var leftIdx = 0;
+        var rightIdx = 0;
+        var i = 0;
+        while (leftIdx < left.length && rightIdx < right.length) {
+            var ret = compare(left[leftIdx], right[rightIdx]);
+            if (ret <= 0) {
+                // smaller_equal -> take left to preserve order
+                data[i++] = left[leftIdx++];
+            }
+            else {
+                // greater -> take right
+                data[i++] = right[rightIdx++];
+            }
+        }
+        while (leftIdx < left.length) {
+            data[i++] = left[leftIdx++];
+        }
+        while (rightIdx < right.length) {
+            data[i++] = right[rightIdx++];
+        }
+        return data;
+    }
+})(TextDocument || (TextDocument = {}));
+/**
+ * Represents reasons why a text document is saved.
+ */
+var TextDocumentSaveReason;
+(function (TextDocumentSaveReason) {
+    /**
+     * Manually triggered, e.g. by the user pressing save, by starting debugging,
+     * or by an API call.
+     */
+    TextDocumentSaveReason.Manual = 1;
+    /**
+     * Automatic after a delay.
+     */
+    TextDocumentSaveReason.AfterDelay = 2;
+    /**
+     * When the editor lost focus.
+     */
+    TextDocumentSaveReason.FocusOut = 3;
+})(TextDocumentSaveReason || (TextDocumentSaveReason = {}));
+var FullTextDocument = /** @class */ (function () {
+    function FullTextDocument(uri, languageId, version, content) {
+        this._uri = uri;
+        this._languageId = languageId;
+        this._version = version;
+        this._content = content;
+        this._lineOffsets = null;
+    }
+    Object.defineProperty(FullTextDocument.prototype, "uri", {
+        get: function () {
+            return this._uri;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FullTextDocument.prototype, "languageId", {
+        get: function () {
+            return this._languageId;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FullTextDocument.prototype, "version", {
+        get: function () {
+            return this._version;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    FullTextDocument.prototype.getText = function (range) {
+        if (range) {
+            var start = this.offsetAt(range.start);
+            var end = this.offsetAt(range.end);
+            return this._content.substring(start, end);
+        }
+        return this._content;
+    };
+    FullTextDocument.prototype.update = function (event, version) {
+        this._content = event.text;
+        this._version = version;
+        this._lineOffsets = null;
+    };
+    FullTextDocument.prototype.getLineOffsets = function () {
+        if (this._lineOffsets === null) {
+            var lineOffsets = [];
+            var text = this._content;
+            var isLineStart = true;
+            for (var i = 0; i < text.length; i++) {
+                if (isLineStart) {
+                    lineOffsets.push(i);
+                    isLineStart = false;
+                }
+                var ch = text.charAt(i);
+                isLineStart = (ch === '\r' || ch === '\n');
+                if (ch === '\r' && i + 1 < text.length && text.charAt(i + 1) === '\n') {
+                    i++;
+                }
+            }
+            if (isLineStart && text.length > 0) {
+                lineOffsets.push(text.length);
+            }
+            this._lineOffsets = lineOffsets;
+        }
+        return this._lineOffsets;
+    };
+    FullTextDocument.prototype.positionAt = function (offset) {
+        offset = Math.max(Math.min(offset, this._content.length), 0);
+        var lineOffsets = this.getLineOffsets();
+        var low = 0, high = lineOffsets.length;
+        if (high === 0) {
+            return Position.create(0, offset);
+        }
+        while (low < high) {
+            var mid = Math.floor((low + high) / 2);
+            if (lineOffsets[mid] > offset) {
+                high = mid;
+            }
+            else {
+                low = mid + 1;
+            }
+        }
+        // low is the least x for which the line offset is larger than the current offset
+        // or array.length if no line offset is larger than the current offset
+        var line = low - 1;
+        return Position.create(line, offset - lineOffsets[line]);
+    };
+    FullTextDocument.prototype.offsetAt = function (position) {
+        var lineOffsets = this.getLineOffsets();
+        if (position.line >= lineOffsets.length) {
+            return this._content.length;
+        }
+        else if (position.line < 0) {
+            return 0;
+        }
+        var lineOffset = lineOffsets[position.line];
+        var nextLineOffset = (position.line + 1 < lineOffsets.length) ? lineOffsets[position.line + 1] : this._content.length;
+        return Math.max(Math.min(lineOffset + position.character, nextLineOffset), lineOffset);
+    };
+    Object.defineProperty(FullTextDocument.prototype, "lineCount", {
+        get: function () {
+            return this.getLineOffsets().length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return FullTextDocument;
+}());
+var Is;
+(function (Is) {
+    var toString = Object.prototype.toString;
+    function defined(value) {
+        return typeof value !== 'undefined';
+    }
+    Is.defined = defined;
+    function undefined(value) {
+        return typeof value === 'undefined';
+    }
+    Is.undefined = undefined;
+    function boolean(value) {
+        return value === true || value === false;
+    }
+    Is.boolean = boolean;
+    function string(value) {
+        return toString.call(value) === '[object String]';
+    }
+    Is.string = string;
+    function number(value) {
+        return toString.call(value) === '[object Number]';
+    }
+    Is.number = number;
+    function func(value) {
+        return toString.call(value) === '[object Function]';
+    }
+    Is.func = func;
+    function typedArray(value, check) {
+        return Array.isArray(value) && value.every(check);
+    }
+    Is.typedArray = typedArray;
+})(Is || (Is = {}));
+
+
+/***/ }),
+
+/***/ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/cssMode.js":
 /*!****************************************************************************************************!*\
   !*** ./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/cssMode.js ***!
   \****************************************************************************************************/
-/*! exports provided: setupMode */function(e,n,t){"use strict";t.r(n),t.d(n,"setupMode",function(){return o});var r=t(/*! ./workerManager.js */"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/workerManager.js"),i=t(/*! ./languageFeatures.js */"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/languageFeatures.js");function o(e){var n=new r.WorkerManager(e),t=function(e){for(var t=[],r=1;r<arguments.length;r++)t[r-1]=arguments[r];return n.getLanguageServiceWorker.apply(n,[e].concat(t))},o=e.languageId;monaco.languages.registerCompletionItemProvider(o,new i.CompletionAdapter(t)),monaco.languages.registerHoverProvider(o,new i.HoverAdapter(t)),monaco.languages.registerDocumentHighlightProvider(o,new i.DocumentHighlightAdapter(t)),monaco.languages.registerDefinitionProvider(o,new i.DefinitionAdapter(t)),monaco.languages.registerReferenceProvider(o,new i.ReferenceAdapter(t)),monaco.languages.registerDocumentSymbolProvider(o,new i.DocumentSymbolAdapter(t)),monaco.languages.registerRenameProvider(o,new i.RenameAdapter(t)),monaco.languages.registerColorProvider(o,new i.DocumentColorAdapter(t)),new i.DiagnosticsAdapter(o,t,e)}},"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/languageFeatures.js":
+/*! exports provided: setupMode */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupMode", function() { return setupMode; });
+/* harmony import */ var _workerManager_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./workerManager.js */ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/workerManager.js");
+/* harmony import */ var _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./languageFeatures.js */ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/languageFeatures.js");
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
+
+function setupMode(defaults) {
+    var client = new _workerManager_js__WEBPACK_IMPORTED_MODULE_0__["WorkerManager"](defaults);
+    var worker = function (first) {
+        var more = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            more[_i - 1] = arguments[_i];
+        }
+        return client.getLanguageServiceWorker.apply(client, [first].concat(more));
+    };
+    var languageId = defaults.languageId;
+    monaco.languages.registerCompletionItemProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["CompletionAdapter"](worker));
+    monaco.languages.registerHoverProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["HoverAdapter"](worker));
+    monaco.languages.registerDocumentHighlightProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["DocumentHighlightAdapter"](worker));
+    monaco.languages.registerDefinitionProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["DefinitionAdapter"](worker));
+    monaco.languages.registerReferenceProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["ReferenceAdapter"](worker));
+    monaco.languages.registerDocumentSymbolProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["DocumentSymbolAdapter"](worker));
+    monaco.languages.registerRenameProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["RenameAdapter"](worker));
+    monaco.languages.registerColorProvider(languageId, new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["DocumentColorAdapter"](worker));
+    new _languageFeatures_js__WEBPACK_IMPORTED_MODULE_1__["DiagnosticsAdapter"](languageId, worker, defaults);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/languageFeatures.js":
 /*!*************************************************************************************************************!*\
   !*** ./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/languageFeatures.js ***!
   \*************************************************************************************************************/
-/*! exports provided: DiagnosticsAdapter, CompletionAdapter, HoverAdapter, DocumentHighlightAdapter, DefinitionAdapter, ReferenceAdapter, RenameAdapter, DocumentSymbolAdapter, DocumentColorAdapter */function(e,n,t){"use strict";t.r(n),t.d(n,"DiagnosticsAdapter",function(){return o}),t.d(n,"CompletionAdapter",function(){return s}),t.d(n,"HoverAdapter",function(){return f}),t.d(n,"DocumentHighlightAdapter",function(){return l}),t.d(n,"DefinitionAdapter",function(){return m}),t.d(n,"ReferenceAdapter",function(){return h}),t.d(n,"RenameAdapter",function(){return p}),t.d(n,"DocumentSymbolAdapter",function(){return v}),t.d(n,"DocumentColorAdapter",function(){return _});var r=t(/*! ./_deps/vscode-languageserver-types/main.js */"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/_deps/vscode-languageserver-types/main.js"),i=monaco.Uri,o=function(){function e(e,n,t){var r=this;this._languageId=e,this._worker=n,this._disposables=[],this._listener=Object.create(null);var i=function(e){var n,t=e.getModeId();t===r._languageId&&(r._listener[e.uri.toString()]=e.onDidChangeContent(function(){clearTimeout(n),n=setTimeout(function(){return r._doValidate(e.uri,t)},500)}),r._doValidate(e.uri,t))},o=function(e){monaco.editor.setModelMarkers(e,r._languageId,[]);var n=e.uri.toString(),t=r._listener[n];t&&(t.dispose(),delete r._listener[n])};this._disposables.push(monaco.editor.onDidCreateModel(i)),this._disposables.push(monaco.editor.onWillDisposeModel(o)),this._disposables.push(monaco.editor.onDidChangeModelLanguage(function(e){o(e.model),i(e.model)})),t.onDidChange(function(e){monaco.editor.getModels().forEach(function(e){e.getModeId()===r._languageId&&(o(e),i(e))})}),this._disposables.push({dispose:function(){for(var e in r._listener)r._listener[e].dispose()}}),monaco.editor.getModels().forEach(i)}return e.prototype.dispose=function(){this._disposables.forEach(function(e){return e&&e.dispose()}),this._disposables=[]},e.prototype._doValidate=function(e,n){this._worker(e).then(function(n){return n.doValidation(e.toString())}).then(function(t){var i=t.map(function(e){return function(e,n){var t="number"==typeof n.code?String(n.code):n.code;return{severity:function(e){switch(e){case r.DiagnosticSeverity.Error:return monaco.MarkerSeverity.Error;case r.DiagnosticSeverity.Warning:return monaco.MarkerSeverity.Warning;case r.DiagnosticSeverity.Information:return monaco.MarkerSeverity.Info;case r.DiagnosticSeverity.Hint:return monaco.MarkerSeverity.Hint;default:return monaco.MarkerSeverity.Info}}(n.severity),startLineNumber:n.range.start.line+1,startColumn:n.range.start.character+1,endLineNumber:n.range.end.line+1,endColumn:n.range.end.character+1,message:n.message,code:t,source:n.source}}(0,e)}),o=monaco.editor.getModel(e);o.getModeId()===n&&monaco.editor.setModelMarkers(o,n,i)}).done(void 0,function(e){console.error(e)})},e}();function u(e){if(e)return{character:e.column-1,line:e.lineNumber-1}}function a(e){if(e)return new monaco.Range(e.start.line+1,e.start.character+1,e.end.line+1,e.end.character+1)}function c(e){if(e)return{range:a(e.range),text:e.newText}}var s=function(){function e(e){this._worker=e}return Object.defineProperty(e.prototype,"triggerCharacters",{get:function(){return[" ",":"]},enumerable:!0,configurable:!0}),e.prototype.provideCompletionItems=function(e,n,t){e.getWordUntilPosition(n);var i=e.uri;return y(t,this._worker(i).then(function(e){return e.doComplete(i.toString(),u(n))}).then(function(e){if(e){var n=e.items.map(function(e){var n={label:e.label,insertText:e.insertText,sortText:e.sortText,filterText:e.filterText,documentation:e.documentation,detail:e.detail,kind:function(e){var n=monaco.languages.CompletionItemKind;switch(e){case r.CompletionItemKind.Text:return n.Text;case r.CompletionItemKind.Method:return n.Method;case r.CompletionItemKind.Function:return n.Function;case r.CompletionItemKind.Constructor:return n.Constructor;case r.CompletionItemKind.Field:return n.Field;case r.CompletionItemKind.Variable:return n.Variable;case r.CompletionItemKind.Class:return n.Class;case r.CompletionItemKind.Interface:return n.Interface;case r.CompletionItemKind.Module:return n.Module;case r.CompletionItemKind.Property:return n.Property;case r.CompletionItemKind.Unit:return n.Unit;case r.CompletionItemKind.Value:return n.Value;case r.CompletionItemKind.Enum:return n.Enum;case r.CompletionItemKind.Keyword:return n.Keyword;case r.CompletionItemKind.Snippet:return n.Snippet;case r.CompletionItemKind.Color:return n.Color;case r.CompletionItemKind.File:return n.File;case r.CompletionItemKind.Reference:return n.Reference}return n.Property}(e.kind)};return e.textEdit&&(n.range=a(e.textEdit.range),n.insertText=e.textEdit.newText),e.additionalTextEdits&&(n.additionalTextEdits=e.additionalTextEdits.map(c)),e.insertTextFormat===r.InsertTextFormat.Snippet&&(n.insertText={value:n.insertText}),n});return{isIncomplete:e.isIncomplete,items:n}}}))},e}();function d(e){return"string"==typeof e?{value:e}:function(e){return e&&"object"==typeof e&&"string"==typeof e.kind}(e)?"plaintext"===e.kind?{value:e.value.replace(/[\\`*_{}[\]()#+\-.!]/g,"\\$&")}:{value:e.value}:{value:"```"+e.language+"\n"+e.value+"\n```\n"}}var f=function(){function e(e){this._worker=e}return e.prototype.provideHover=function(e,n,t){var r=e.uri;return y(t,this._worker(r).then(function(e){return e.doHover(r.toString(),u(n))}).then(function(e){if(e)return{range:a(e.range),contents:function(e){if(e)return Array.isArray(e)?e.map(d):[d(e)]}(e.contents)}}))},e}();var l=function(){function e(e){this._worker=e}return e.prototype.provideDocumentHighlights=function(e,n,t){var i=e.uri;return y(t,this._worker(i).then(function(e){return e.findDocumentHighlights(i.toString(),u(n))}).then(function(e){if(e)return e.map(function(e){return{range:a(e.range),kind:function(e){switch(e){case r.DocumentHighlightKind.Read:return monaco.languages.DocumentHighlightKind.Read;case r.DocumentHighlightKind.Write:return monaco.languages.DocumentHighlightKind.Write;case r.DocumentHighlightKind.Text:return monaco.languages.DocumentHighlightKind.Text}return monaco.languages.DocumentHighlightKind.Text}(e.kind)}})}))},e}();function g(e){return{uri:i.parse(e.uri),range:a(e.range)}}var m=function(){function e(e){this._worker=e}return e.prototype.provideDefinition=function(e,n,t){var r=e.uri;return y(t,this._worker(r).then(function(e){return e.findDefinition(r.toString(),u(n))}).then(function(e){if(e)return[g(e)]}))},e}(),h=function(){function e(e){this._worker=e}return e.prototype.provideReferences=function(e,n,t,r){var i=e.uri;return y(r,this._worker(i).then(function(e){return e.findReferences(i.toString(),u(n))}).then(function(e){if(e)return e.map(g)}))},e}();var p=function(){function e(e){this._worker=e}return e.prototype.provideRenameEdits=function(e,n,t,r){var o=e.uri;return y(r,this._worker(o).then(function(e){return e.doRename(o.toString(),u(n),t)}).then(function(e){return function(e){if(e&&e.changes){var n=[];for(var t in e.changes){for(var r=[],o=0,u=e.changes[t];o<u.length;o++){var c=u[o];r.push({range:a(c.range),text:c.newText})}n.push({resource:i.parse(t),edits:r})}return{edits:n}}}(e)}))},e}();var v=function(){function e(e){this._worker=e}return e.prototype.provideDocumentSymbols=function(e,n){var t=e.uri;return y(n,this._worker(t).then(function(e){return e.findDocumentSymbols(t.toString())}).then(function(e){if(e)return e.map(function(e){return{name:e.name,containerName:e.containerName,kind:function(e){var n=monaco.languages.SymbolKind;switch(e){case r.SymbolKind.File:return n.Array;case r.SymbolKind.Module:return n.Module;case r.SymbolKind.Namespace:return n.Namespace;case r.SymbolKind.Package:return n.Package;case r.SymbolKind.Class:return n.Class;case r.SymbolKind.Method:return n.Method;case r.SymbolKind.Property:return n.Property;case r.SymbolKind.Field:return n.Field;case r.SymbolKind.Constructor:return n.Constructor;case r.SymbolKind.Enum:return n.Enum;case r.SymbolKind.Interface:return n.Interface;case r.SymbolKind.Function:return n.Function;case r.SymbolKind.Variable:return n.Variable;case r.SymbolKind.Constant:return n.Constant;case r.SymbolKind.String:return n.String;case r.SymbolKind.Number:return n.Number;case r.SymbolKind.Boolean:return n.Boolean;case r.SymbolKind.Array:return n.Array}return n.Function}(e.kind),location:g(e.location)}})}))},e}(),_=function(){function e(e){this._worker=e}return e.prototype.provideDocumentColors=function(e,n){var t=e.uri;return y(n,this._worker(t).then(function(e){return e.findDocumentColors(t.toString())}).then(function(e){if(e)return e.map(function(e){return{color:e.color,range:a(e.range)}})}))},e.prototype.provideColorPresentations=function(e,n,t){var r=e.uri;return y(t,this._worker(r).then(function(e){return e.getColorPresentations(r.toString(),n.color,function(e){if(e)return{start:{line:e.startLineNumber-1,character:e.startColumn-1},end:{line:e.endLineNumber-1,character:e.endColumn-1}}}(n.range))}).then(function(e){if(e)return e.map(function(e){var n={label:e.label};return e.textEdit&&(n.textEdit=c(e.textEdit)),e.additionalTextEdits&&(n.additionalTextEdits=e.additionalTextEdits.map(c)),n})}))},e}();function y(e,n){return e.onCancellationRequested(function(){return n.cancel()}),n}},"./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/workerManager.js":
+/*! exports provided: DiagnosticsAdapter, CompletionAdapter, HoverAdapter, DocumentHighlightAdapter, DefinitionAdapter, ReferenceAdapter, RenameAdapter, DocumentSymbolAdapter, DocumentColorAdapter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DiagnosticsAdapter", function() { return DiagnosticsAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompletionAdapter", function() { return CompletionAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HoverAdapter", function() { return HoverAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentHighlightAdapter", function() { return DocumentHighlightAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefinitionAdapter", function() { return DefinitionAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReferenceAdapter", function() { return ReferenceAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenameAdapter", function() { return RenameAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentSymbolAdapter", function() { return DocumentSymbolAdapter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DocumentColorAdapter", function() { return DocumentColorAdapter; });
+/* harmony import */ var _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deps/vscode-languageserver-types/main.js */ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/_deps/vscode-languageserver-types/main.js");
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
+var Uri = monaco.Uri;
+// --- diagnostics --- ---
+var DiagnosticsAdapter = /** @class */ (function () {
+    function DiagnosticsAdapter(_languageId, _worker, defaults) {
+        var _this = this;
+        this._languageId = _languageId;
+        this._worker = _worker;
+        this._disposables = [];
+        this._listener = Object.create(null);
+        var onModelAdd = function (model) {
+            var modeId = model.getModeId();
+            if (modeId !== _this._languageId) {
+                return;
+            }
+            var handle;
+            _this._listener[model.uri.toString()] = model.onDidChangeContent(function () {
+                clearTimeout(handle);
+                handle = setTimeout(function () { return _this._doValidate(model.uri, modeId); }, 500);
+            });
+            _this._doValidate(model.uri, modeId);
+        };
+        var onModelRemoved = function (model) {
+            monaco.editor.setModelMarkers(model, _this._languageId, []);
+            var uriStr = model.uri.toString();
+            var listener = _this._listener[uriStr];
+            if (listener) {
+                listener.dispose();
+                delete _this._listener[uriStr];
+            }
+        };
+        this._disposables.push(monaco.editor.onDidCreateModel(onModelAdd));
+        this._disposables.push(monaco.editor.onWillDisposeModel(onModelRemoved));
+        this._disposables.push(monaco.editor.onDidChangeModelLanguage(function (event) {
+            onModelRemoved(event.model);
+            onModelAdd(event.model);
+        }));
+        defaults.onDidChange(function (_) {
+            monaco.editor.getModels().forEach(function (model) {
+                if (model.getModeId() === _this._languageId) {
+                    onModelRemoved(model);
+                    onModelAdd(model);
+                }
+            });
+        });
+        this._disposables.push({
+            dispose: function () {
+                for (var key in _this._listener) {
+                    _this._listener[key].dispose();
+                }
+            }
+        });
+        monaco.editor.getModels().forEach(onModelAdd);
+    }
+    DiagnosticsAdapter.prototype.dispose = function () {
+        this._disposables.forEach(function (d) { return d && d.dispose(); });
+        this._disposables = [];
+    };
+    DiagnosticsAdapter.prototype._doValidate = function (resource, languageId) {
+        this._worker(resource).then(function (worker) {
+            return worker.doValidation(resource.toString());
+        }).then(function (diagnostics) {
+            var markers = diagnostics.map(function (d) { return toDiagnostics(resource, d); });
+            var model = monaco.editor.getModel(resource);
+            if (model.getModeId() === languageId) {
+                monaco.editor.setModelMarkers(model, languageId, markers);
+            }
+        }).done(undefined, function (err) {
+            console.error(err);
+        });
+    };
+    return DiagnosticsAdapter;
+}());
+
+function toSeverity(lsSeverity) {
+    switch (lsSeverity) {
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DiagnosticSeverity"].Error: return monaco.MarkerSeverity.Error;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DiagnosticSeverity"].Warning: return monaco.MarkerSeverity.Warning;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DiagnosticSeverity"].Information: return monaco.MarkerSeverity.Info;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DiagnosticSeverity"].Hint: return monaco.MarkerSeverity.Hint;
+        default:
+            return monaco.MarkerSeverity.Info;
+    }
+}
+function toDiagnostics(resource, diag) {
+    var code = typeof diag.code === 'number' ? String(diag.code) : diag.code;
+    return {
+        severity: toSeverity(diag.severity),
+        startLineNumber: diag.range.start.line + 1,
+        startColumn: diag.range.start.character + 1,
+        endLineNumber: diag.range.end.line + 1,
+        endColumn: diag.range.end.character + 1,
+        message: diag.message,
+        code: code,
+        source: diag.source
+    };
+}
+// --- completion ------
+function fromPosition(position) {
+    if (!position) {
+        return void 0;
+    }
+    return { character: position.column - 1, line: position.lineNumber - 1 };
+}
+function fromRange(range) {
+    if (!range) {
+        return void 0;
+    }
+    return { start: { line: range.startLineNumber - 1, character: range.startColumn - 1 }, end: { line: range.endLineNumber - 1, character: range.endColumn - 1 } };
+}
+function toRange(range) {
+    if (!range) {
+        return void 0;
+    }
+    return new monaco.Range(range.start.line + 1, range.start.character + 1, range.end.line + 1, range.end.character + 1);
+}
+function toCompletionItemKind(kind) {
+    var mItemKind = monaco.languages.CompletionItemKind;
+    switch (kind) {
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Text: return mItemKind.Text;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Method: return mItemKind.Method;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Function: return mItemKind.Function;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Constructor: return mItemKind.Constructor;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Field: return mItemKind.Field;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Variable: return mItemKind.Variable;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Class: return mItemKind.Class;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Interface: return mItemKind.Interface;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Module: return mItemKind.Module;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Property: return mItemKind.Property;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Unit: return mItemKind.Unit;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Value: return mItemKind.Value;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Enum: return mItemKind.Enum;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Keyword: return mItemKind.Keyword;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Snippet: return mItemKind.Snippet;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Color: return mItemKind.Color;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].File: return mItemKind.File;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["CompletionItemKind"].Reference: return mItemKind.Reference;
+    }
+    return mItemKind.Property;
+}
+function toTextEdit(textEdit) {
+    if (!textEdit) {
+        return void 0;
+    }
+    return {
+        range: toRange(textEdit.range),
+        text: textEdit.newText
+    };
+}
+var CompletionAdapter = /** @class */ (function () {
+    function CompletionAdapter(_worker) {
+        this._worker = _worker;
+    }
+    Object.defineProperty(CompletionAdapter.prototype, "triggerCharacters", {
+        get: function () {
+            return [' ', ':'];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CompletionAdapter.prototype.provideCompletionItems = function (model, position, token) {
+        var wordInfo = model.getWordUntilPosition(position);
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.doComplete(resource.toString(), fromPosition(position));
+        }).then(function (info) {
+            if (!info) {
+                return;
+            }
+            var items = info.items.map(function (entry) {
+                var item = {
+                    label: entry.label,
+                    insertText: entry.insertText,
+                    sortText: entry.sortText,
+                    filterText: entry.filterText,
+                    documentation: entry.documentation,
+                    detail: entry.detail,
+                    kind: toCompletionItemKind(entry.kind),
+                };
+                if (entry.textEdit) {
+                    item.range = toRange(entry.textEdit.range);
+                    item.insertText = entry.textEdit.newText;
+                }
+                if (entry.additionalTextEdits) {
+                    item.additionalTextEdits = entry.additionalTextEdits.map(toTextEdit);
+                }
+                if (entry.insertTextFormat === _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["InsertTextFormat"].Snippet) {
+                    item.insertText = { value: item.insertText };
+                }
+                return item;
+            });
+            return {
+                isIncomplete: info.isIncomplete,
+                items: items
+            };
+        }));
+    };
+    return CompletionAdapter;
+}());
+
+function isMarkupContent(thing) {
+    return thing && typeof thing === 'object' && typeof thing.kind === 'string';
+}
+function toMarkdownString(entry) {
+    if (typeof entry === 'string') {
+        return {
+            value: entry
+        };
+    }
+    if (isMarkupContent(entry)) {
+        if (entry.kind === 'plaintext') {
+            return {
+                value: entry.value.replace(/[\\`*_{}[\]()#+\-.!]/g, '\\$&')
+            };
+        }
+        return {
+            value: entry.value
+        };
+    }
+    return { value: '```' + entry.language + '\n' + entry.value + '\n```\n' };
+}
+function toMarkedStringArray(contents) {
+    if (!contents) {
+        return void 0;
+    }
+    if (Array.isArray(contents)) {
+        return contents.map(toMarkdownString);
+    }
+    return [toMarkdownString(contents)];
+}
+// --- hover ------
+var HoverAdapter = /** @class */ (function () {
+    function HoverAdapter(_worker) {
+        this._worker = _worker;
+    }
+    HoverAdapter.prototype.provideHover = function (model, position, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.doHover(resource.toString(), fromPosition(position));
+        }).then(function (info) {
+            if (!info) {
+                return;
+            }
+            return {
+                range: toRange(info.range),
+                contents: toMarkedStringArray(info.contents)
+            };
+        }));
+    };
+    return HoverAdapter;
+}());
+
+// --- document highlights ------
+function toDocumentHighlightKind(kind) {
+    switch (kind) {
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DocumentHighlightKind"].Read: return monaco.languages.DocumentHighlightKind.Read;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DocumentHighlightKind"].Write: return monaco.languages.DocumentHighlightKind.Write;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["DocumentHighlightKind"].Text: return monaco.languages.DocumentHighlightKind.Text;
+    }
+    return monaco.languages.DocumentHighlightKind.Text;
+}
+var DocumentHighlightAdapter = /** @class */ (function () {
+    function DocumentHighlightAdapter(_worker) {
+        this._worker = _worker;
+    }
+    DocumentHighlightAdapter.prototype.provideDocumentHighlights = function (model, position, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.findDocumentHighlights(resource.toString(), fromPosition(position));
+        }).then(function (entries) {
+            if (!entries) {
+                return;
+            }
+            return entries.map(function (entry) {
+                return {
+                    range: toRange(entry.range),
+                    kind: toDocumentHighlightKind(entry.kind)
+                };
+            });
+        }));
+    };
+    return DocumentHighlightAdapter;
+}());
+
+// --- definition ------
+function toLocation(location) {
+    return {
+        uri: Uri.parse(location.uri),
+        range: toRange(location.range)
+    };
+}
+var DefinitionAdapter = /** @class */ (function () {
+    function DefinitionAdapter(_worker) {
+        this._worker = _worker;
+    }
+    DefinitionAdapter.prototype.provideDefinition = function (model, position, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.findDefinition(resource.toString(), fromPosition(position));
+        }).then(function (definition) {
+            if (!definition) {
+                return;
+            }
+            return [toLocation(definition)];
+        }));
+    };
+    return DefinitionAdapter;
+}());
+
+// --- references ------
+var ReferenceAdapter = /** @class */ (function () {
+    function ReferenceAdapter(_worker) {
+        this._worker = _worker;
+    }
+    ReferenceAdapter.prototype.provideReferences = function (model, position, context, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.findReferences(resource.toString(), fromPosition(position));
+        }).then(function (entries) {
+            if (!entries) {
+                return;
+            }
+            return entries.map(toLocation);
+        }));
+    };
+    return ReferenceAdapter;
+}());
+
+// --- rename ------
+function toWorkspaceEdit(edit) {
+    if (!edit || !edit.changes) {
+        return void 0;
+    }
+    var resourceEdits = [];
+    for (var uri in edit.changes) {
+        var edits = [];
+        for (var _i = 0, _a = edit.changes[uri]; _i < _a.length; _i++) {
+            var e = _a[_i];
+            edits.push({
+                range: toRange(e.range),
+                text: e.newText
+            });
+        }
+        resourceEdits.push({ resource: Uri.parse(uri), edits: edits });
+    }
+    return {
+        edits: resourceEdits
+    };
+}
+var RenameAdapter = /** @class */ (function () {
+    function RenameAdapter(_worker) {
+        this._worker = _worker;
+    }
+    RenameAdapter.prototype.provideRenameEdits = function (model, position, newName, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) {
+            return worker.doRename(resource.toString(), fromPosition(position), newName);
+        }).then(function (edit) {
+            return toWorkspaceEdit(edit);
+        }));
+    };
+    return RenameAdapter;
+}());
+
+// --- document symbols ------
+function toSymbolKind(kind) {
+    var mKind = monaco.languages.SymbolKind;
+    switch (kind) {
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].File: return mKind.Array;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Module: return mKind.Module;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Namespace: return mKind.Namespace;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Package: return mKind.Package;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Class: return mKind.Class;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Method: return mKind.Method;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Property: return mKind.Property;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Field: return mKind.Field;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Constructor: return mKind.Constructor;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Enum: return mKind.Enum;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Interface: return mKind.Interface;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Function: return mKind.Function;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Variable: return mKind.Variable;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Constant: return mKind.Constant;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].String: return mKind.String;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Number: return mKind.Number;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Boolean: return mKind.Boolean;
+        case _deps_vscode_languageserver_types_main_js__WEBPACK_IMPORTED_MODULE_0__["SymbolKind"].Array: return mKind.Array;
+    }
+    return mKind.Function;
+}
+var DocumentSymbolAdapter = /** @class */ (function () {
+    function DocumentSymbolAdapter(_worker) {
+        this._worker = _worker;
+    }
+    DocumentSymbolAdapter.prototype.provideDocumentSymbols = function (model, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) { return worker.findDocumentSymbols(resource.toString()); }).then(function (items) {
+            if (!items) {
+                return;
+            }
+            return items.map(function (item) { return ({
+                name: item.name,
+                containerName: item.containerName,
+                kind: toSymbolKind(item.kind),
+                location: toLocation(item.location)
+            }); });
+        }));
+    };
+    return DocumentSymbolAdapter;
+}());
+
+var DocumentColorAdapter = /** @class */ (function () {
+    function DocumentColorAdapter(_worker) {
+        this._worker = _worker;
+    }
+    DocumentColorAdapter.prototype.provideDocumentColors = function (model, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) { return worker.findDocumentColors(resource.toString()); }).then(function (infos) {
+            if (!infos) {
+                return;
+            }
+            return infos.map(function (item) { return ({
+                color: item.color,
+                range: toRange(item.range)
+            }); });
+        }));
+    };
+    DocumentColorAdapter.prototype.provideColorPresentations = function (model, info, token) {
+        var resource = model.uri;
+        return wireCancellationToken(token, this._worker(resource).then(function (worker) { return worker.getColorPresentations(resource.toString(), info.color, fromRange(info.range)); }).then(function (presentations) {
+            if (!presentations) {
+                return;
+            }
+            return presentations.map(function (presentation) {
+                var item = {
+                    label: presentation.label,
+                };
+                if (presentation.textEdit) {
+                    item.textEdit = toTextEdit(presentation.textEdit);
+                }
+                if (presentation.additionalTextEdits) {
+                    item.additionalTextEdits = presentation.additionalTextEdits.map(toTextEdit);
+                }
+                return item;
+            });
+        }));
+    };
+    return DocumentColorAdapter;
+}());
+
+/**
+ * Hook a cancellation token to a WinJS Promise
+ */
+function wireCancellationToken(token, promise) {
+    token.onCancellationRequested(function () { return promise.cancel(); });
+    return promise;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/workerManager.js":
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/react-monaco-editor/node_modules/monaco-editor/esm/vs/language/css/workerManager.js ***!
   \**********************************************************************************************************/
-/*! exports provided: WorkerManager */function(e,n,t){"use strict";t.r(n),t.d(n,"WorkerManager",function(){return i});var r=monaco.Promise,i=function(){function e(e){var n=this;this._defaults=e,this._worker=null,this._idleCheckInterval=setInterval(function(){return n._checkIfIdle()},3e4),this._lastUsedTime=0,this._configChangeListener=this._defaults.onDidChange(function(){return n._stopWorker()})}return e.prototype._stopWorker=function(){this._worker&&(this._worker.dispose(),this._worker=null),this._client=null},e.prototype.dispose=function(){clearInterval(this._idleCheckInterval),this._configChangeListener.dispose(),this._stopWorker()},e.prototype._checkIfIdle=function(){this._worker&&(Date.now()-this._lastUsedTime>12e4&&this._stopWorker())},e.prototype._getClient=function(){return this._lastUsedTime=Date.now(),this._client||(this._worker=monaco.editor.createWebWorker({moduleId:"vs/language/css/cssWorker",label:this._defaults.languageId,createData:{languageSettings:this._defaults.diagnosticsOptions,languageId:this._defaults.languageId}}),this._client=this._worker.getProxy()),this._client},e.prototype.getLanguageServiceWorker=function(){for(var e,n=this,t=[],i=0;i<arguments.length;i++)t[i]=arguments[i];return function(e){var n,t,i=new r(function(e,r){n=e,t=r},function(){});return e.then(n,t),i}(this._getClient().then(function(n){e=n}).then(function(e){return n._worker.withSyncedResources(t)}).then(function(n){return e}))},e}()}}]);
+/*! exports provided: WorkerManager */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkerManager", function() { return WorkerManager; });
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+var Promise = monaco.Promise;
+var STOP_WHEN_IDLE_FOR = 2 * 60 * 1000; // 2min
+var WorkerManager = /** @class */ (function () {
+    function WorkerManager(defaults) {
+        var _this = this;
+        this._defaults = defaults;
+        this._worker = null;
+        this._idleCheckInterval = setInterval(function () { return _this._checkIfIdle(); }, 30 * 1000);
+        this._lastUsedTime = 0;
+        this._configChangeListener = this._defaults.onDidChange(function () { return _this._stopWorker(); });
+    }
+    WorkerManager.prototype._stopWorker = function () {
+        if (this._worker) {
+            this._worker.dispose();
+            this._worker = null;
+        }
+        this._client = null;
+    };
+    WorkerManager.prototype.dispose = function () {
+        clearInterval(this._idleCheckInterval);
+        this._configChangeListener.dispose();
+        this._stopWorker();
+    };
+    WorkerManager.prototype._checkIfIdle = function () {
+        if (!this._worker) {
+            return;
+        }
+        var timePassedSinceLastUsed = Date.now() - this._lastUsedTime;
+        if (timePassedSinceLastUsed > STOP_WHEN_IDLE_FOR) {
+            this._stopWorker();
+        }
+    };
+    WorkerManager.prototype._getClient = function () {
+        this._lastUsedTime = Date.now();
+        if (!this._client) {
+            this._worker = monaco.editor.createWebWorker({
+                // module that exports the create() method and returns a `CSSWorker` instance
+                moduleId: 'vs/language/css/cssWorker',
+                label: this._defaults.languageId,
+                // passed in to the create() method
+                createData: {
+                    languageSettings: this._defaults.diagnosticsOptions,
+                    languageId: this._defaults.languageId
+                }
+            });
+            this._client = this._worker.getProxy();
+        }
+        return this._client;
+    };
+    WorkerManager.prototype.getLanguageServiceWorker = function () {
+        var _this = this;
+        var resources = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            resources[_i] = arguments[_i];
+        }
+        var _client;
+        return toShallowCancelPromise(this._getClient().then(function (client) {
+            _client = client;
+        }).then(function (_) {
+            return _this._worker.withSyncedResources(resources);
+        }).then(function (_) { return _client; }));
+    };
+    return WorkerManager;
+}());
+
+function toShallowCancelPromise(p) {
+    var completeCallback;
+    var errorCallback;
+    var r = new Promise(function (c, e) {
+        completeCallback = c;
+        errorCallback = e;
+    }, function () { });
+    p.then(completeCallback, errorCallback);
+    return r;
+}
+
+
+/***/ })
+
+}]);
 //# sourceMappingURL=34.bundle.js.map

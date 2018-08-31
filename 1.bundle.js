@@ -1,10 +1,26 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{4:
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+
+/***/ 4:
 /*!************************!*\
   !*** buffer (ignored) ***!
   \************************/
-/*! no static exports found */function(n,o){},5:
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 5:
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
-/*! no static exports found */function(n,o){}}]);
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ })
+
+}]);
 //# sourceMappingURL=1.bundle.js.map
