@@ -24,5 +24,12 @@
 <link rel="shortcut icon" href="icon.png"></head>
 <body>
 <div id="gisto"></div>
-<script type="text/javascript" src="bundle.js?c3a45bd2e6146ebe9aa0"></script></body>
+<script>
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/service-worker.js');
+		});
+	}
+</script>
+<script type="text/javascript" src="bundle.js?523791833df4c1ebedf6"></script></body>
 </html>
