@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "src/icons/ionic/warning.svg"
   },
   {
-    "revision": "44a526eed258222515aa21eaffd14a96",
-    "url": "src/img/marker-shadow.png"
-  },
-  {
     "revision": "401d815dc206b8dc1b17cd0e37695975",
     "url": "src/img/marker-icon-2x.png"
+  },
+  {
+    "revision": "44a526eed258222515aa21eaffd14a96",
+    "url": "src/img/marker-shadow.png"
   },
   {
     "revision": "2273e3d8ad9264b7daa5bdbf8e6b47f8",
@@ -296,7 +296,7 @@ self.__precacheManifest = [
     "url": "src/icons/eva/book-outline.svg"
   },
   {
-    "revision": "522b901719a2da0f51da",
+    "revision": "c43b5d794b35e039929d",
     "url": "bundle.js"
   },
   {
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "0.bundle.js"
   },
   {
-    "revision": "d7c8a1a4f359162929db7ab09ac6cbfd",
+    "revision": "6eb63a8f541e2571fdc0a5d1a50504b1",
     "url": "./index.html"
   }
 ];
