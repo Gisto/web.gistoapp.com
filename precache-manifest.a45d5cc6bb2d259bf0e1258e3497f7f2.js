@@ -296,7 +296,7 @@ self.__precacheManifest = [
     "url": "src/icons/eva/book-outline.svg"
   },
   {
-    "revision": "ecfa192ef36e27903794",
+    "revision": "d5f56bc83dc268caa143",
     "url": "bundle.js"
   },
   {
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "0.bundle.js"
   },
   {
-    "revision": "dece535530d0792fe7e29422a21dd4fb",
+    "revision": "9764fcf45ff58024491dea63f30a2939",
     "url": "./index.html"
   }
 ];
